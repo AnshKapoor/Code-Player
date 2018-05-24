@@ -54,6 +54,14 @@
                 .highlight{
                     background-color: rgb(196, 192, 182); 
                 }
+                textarea{
+                 resize:none;
+                 height: 500px;
+
+                }
+                .panel{
+                    float:left;
+                }
         
         </style>
     </head>
@@ -73,6 +81,12 @@
 
 
         </div>
+        <div id="body-container">
+            <textarea id="htmlPanel" class="Panel">Hello fucker</textarea>
+            <iframe   id="outputPanel" class="Panel">djfd</iframe>
+
+
+        </div>
         <script type="text/javascript">
             $(".toggle-button").hover(function(){
                $(this).addClass("highlight");
@@ -88,7 +102,8 @@
                 $(this).removeClass("highlight");
                 
             })
-        
+            $("textarea").height($(window).height()-$("#header").height()+100); // Ineffective code
+            $(".Panel").width($(window).width()/2 -20)
         </script>
 
 
