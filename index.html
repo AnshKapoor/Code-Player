@@ -47,6 +47,13 @@
 
 
                 }
+                .active{
+                  background-color: rgb(184, 233, 233);
+
+                }
+                .highlight{
+                    background-color: rgb(196, 192, 182); 
+                }
         
         </style>
     </head>
@@ -57,10 +64,10 @@
 
             </div>
             <div id="buttonContainer">
-                <div class="toggle-button"id="html">HTML</div>
+                <div class="toggle-button active"id="html">HTML</div>
                 <div class="toggle-button"id="css">CSS</div>
                 <div class="toggle-button"id="javascript">JS</div>
-                <div class="toggle-button"id="output">Output</div>
+                <div class="toggle-button active"id="output">Output</div>
 
             </div>
 
@@ -68,9 +75,18 @@
         </div>
         <script type="text/javascript">
             $(".toggle-button").hover(function(){
-               $(this).css("background-color","white");
+               $(this).addClass("highlight");
 
 
+            },function(){
+                $(this).removeClass("highlight");
+
+            })
+
+            $(".toggle-button").click(function(){
+                $(this).toggleClass("active");
+                $(this).removeClass("highlight");
+                
             })
         
         </script>
