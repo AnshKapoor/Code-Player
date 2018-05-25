@@ -65,9 +65,13 @@
                 .panel{
                     float:left;
                     width:50%;
+                    border-left: none;
                 }
                 iframe{
                     border:none;
+                }
+                .hidden{
+                    display:none;
                 }
         
         </style>
@@ -90,6 +94,8 @@
         </div>
         <div id="body-container">
             <textarea id="htmlPanel" class="Panel">Hello fucker</textarea>
+            <textarea id="cssPanel" class="Panel hidden">Hello fucker</textarea>
+            <textarea id="javascriptPanel" class="Panel hidden">Hello fucker</textarea>
             <iframe   id="outputPanel" class="Panel">djfd</iframe>
 
 
@@ -107,10 +113,20 @@
             $(".toggle-button").click(function(){
                 $(this).toggleClass("active");
                 $(this).removeClass("highlight");
+                var panelid= $(this).attr("id")+"Panel";
+                $("#"+panelid).toggleClass("hidden");
+                var activePanels=4 - $('.hidden').length;
+                $(".Panel").width($(window).width()/activePanels);
+                
                 
             })
             $(".panel").height($(window).height()-$("#header").height()+415); // Ineffective code
-            $(".Panel").width($(window).width()/2 -12)
+           
+            $("iframe").contents().find("html").html($("#htmlPanel").val());
+            $("textarea").on('change keyup paste',function(){
+                $("iframe").contents().find("html").html($(".Panel").val());
+
+            })
         </script>
 
 
