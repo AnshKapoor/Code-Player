@@ -56,11 +56,18 @@
                 }
                 textarea{
                  resize:none;
-                 height: 500px;
+                 border-top: none;
+                 border-color: black;
+                 border-bottom: none;
+               
 
                 }
                 .panel{
                     float:left;
+                    width:50%;
+                }
+                iframe{
+                    border:none;
                 }
         
         </style>
@@ -102,8 +109,8 @@
                 $(this).removeClass("highlight");
                 
             })
-            $("textarea").height($(window).height()-$("#header").height()+100); // Ineffective code
-            $(".Panel").width($(window).width()/2 -20)
+            $(".panel").height($(window).height()-$("#header").height()+415); // Ineffective code
+            $(".Panel").width($(window).width()/2 -12)
         </script>
 
 
