@@ -116,7 +116,7 @@
                 var panelid= $(this).attr("id")+"Panel";
                 $("#"+panelid).toggleClass("hidden");
                 var activePanels=4 - $('.hidden').length;
-                $(".Panel").width($(window).width()/activePanels);
+                $(".Panel").width($(window).width()/activePanels-100);
                 
                 
             })
@@ -124,7 +124,8 @@
            
             $("iframe").contents().find("html").html($("#htmlPanel").val());
             $("textarea").on('change keyup paste',function(){
-                $("iframe").contents().find("html").html($(".Panel").val());
+                $("iframe").contents().find("html").html("<html><head><style type='text/css'>"+$("#cssPanel").val()
+              +"</style></head><body>"+$("#htmlPanel").val()+"</body></html>");
 
             })
         </script>
