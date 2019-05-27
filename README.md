@@ -1,2 +1,2 @@
 # Code-Player
-A simplified version of JS Bin with more simplified features
+A simplified version of JSBin. [JS Bin Website](https://jsbin.com/)
